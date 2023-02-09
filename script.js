@@ -26,19 +26,19 @@ class Autoservis {
 		this.seznamAut.push(Auto);
 	}
 	removeAuto(Auto) {
-
+		this.seznamAut.remove(Auto);
 	}
 }
 
 function refreshCars(list) {
 	let output = ``;
-	console.log("start "+ list.length);
+	let output2 = "";
 	for(let i = 0; i < list.length; i++){
-		console.log(list[i].toString());
 		output = output  + `<div id="`+ i +`" class="col"><div class="card shadow-sm"><div class="card-body"><h3 class="fw-bold lh-1">`+ list[i].znacka +` `+ list[i].model+`</h3><br><p class="card-text">Rok výroby: `+list[i].rokVyroby +`<p><p class="card-text">Ujeto `+ list[i].najeto +`km</p></div></div></div>`;
+		output2 = output2 + list[i].toString()+ ";\n";
 	}
-	console.log(output);
 	document.getElementById("myAutoservis").innerHTML = output;
+	document.getElementById("seznam").innerHTML = output2;
 }
 
 let myCarServis = new Autoservis("Milošův Autoservis");
