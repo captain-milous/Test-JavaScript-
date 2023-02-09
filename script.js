@@ -30,19 +30,24 @@ class Autoservis {
 	}
 }
 
-function refreshCars(myServis) {
+function refreshCars(list) {
 	let output = ``;
-	console.log("start");
-	for(let i = 0; i < myServis.length; i++){
-		output = `"<div id="`+i+`" class="col"><div class="card shadow-sm"><div class="card-body"><h3 class="fw-bold lh-1">${myServis.seznamAut[i].this.znacka} ${myServis.seznamAut[i].model}</h3><p class="card-text">Rok výroby: ${myServis.seznamAut[i].rokVyroby} \nUjeto ${myServis.seznamAut[i].najeto} km</p></div></div></div>"`;
+	console.log("start "+ list.length);
+	for(let i = 0; i < list.length; i++){
+		console.log(list[i].toString());
+		output = output  + `<div id="`+ i +`" class="col"><div class="card shadow-sm"><div class="card-body"><h3 class="fw-bold lh-1">`+ list[i].znacka +` `+ list[i].model+`</h3><br><p class="card-text">Rok výroby: `+list[i].rokVyroby +`<p><p class="card-text">Ujeto `+ list[i].najeto +`km</p></div></div></div>`;
 	}
 	console.log(output);
 	document.getElementById("myAutoservis").innerHTML = output;
 }
 
-let a1 = new Auto(2005, "Škoda", "Fabia", 169897);
-let myServis = new Autoservis("Milošův Autoservis");
-myServis.addCarToList(a1);
+let myCarServis = new Autoservis("Milošův Autoservis");
+myCarServis.addCarToList(new Auto(2005, "Škoda", "Fabia", 169899));
+myCarServis.addCarToList(new Auto(2004, "Škoda", "Fabia", 206997));
+myCarServis.addCarToList(new Auto(2003, "Škoda", "Octavia", 369893));
+myCarServis.addCarToList(new Auto(2000, "Škoda", "Felicia", 69097));
+myCarServis.addCarToList(new Auto(2010, "Škoda", "Superb", 129428));
 
-console.log(myServis.getCarList());
-refreshCars(myServis);
+
+console.log(myCarServis.getCarList());
+refreshCars(myCarServis.seznamAut);
