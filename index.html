@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoservis</title>
+ 
+  <script type="text/javascript" src="script.js" defer></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+
+</head>
+<body class="font-weight-bolder">
+<!-- Header -->
+  <div class="p-3 fixed-top text-bg-dark">
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center ">
+        <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <span class="fs-4 text-white">Milosuv Autoservis</span>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-secondary" aria-current="page">Hlavní stránka</a></li>
+          <li class="nav-item"><a href="o-nas.html" class="nav-link px-2 text-white">O Nás</a></li>
+          <li class="nav-item"><a href="sluzby.html" class="nav-link px-2 text-white">Služby</a></li>
+          <li class="nav-item"><a href="kontakt.html" class="nav-link px-2 text-white">Kontakt</a></li>
+        </ul>
+      </header>
+    </div>
+  </div>
+  <br>
+  <br>
+
+<!-- Aktualní nabídka vozidel -->
+  <div class="album py-5">
+    <div class="container">
+      <p class="h3">Aktuální nabídka vozidel</p>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+        <!-- Skoda Felicie -->
+        <div id="1" class="col">
+          <div class="card shadow-sm">
+            <img src="images/felicie.jpg" width="100%" height="225">
+            <div class="card-body">
+              <h3 class="fw-bold lh-1">Škoda Felicie</h3>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque porta. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.</p>
+            </div>
+            <div class="card-body align-items-center bg-light border-top">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropFelicie">
+                Podrobnosti o vozidle
+              </button>              
+            </div>
+          </div>
+        </div>
+        <!-- Skoda 110R -->
+        <div id="2" class="col">
+          <div class="card shadow-sm">
+            <img src="images/skoda110r.jpg" width="100%" height="225">
+            <div class="card-body">
+              <h3 class="fw-bold lh-1">Škoda 110R</h3>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque porta. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.</p>
+            </div>
+            <div class="card-body align-items-center bg-light border-top">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropSkoda110R">
+                Podrobnosti o vozidle
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Trabant -->
+        <div id="3" class="col">
+          <div class="card shadow-sm">
+            <img src="images/trabant.jpeg" width="100%" height="225">
+            <div class="card-body">
+              <h3 class="fw-bold lh-1">Trabant</h3>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque porta. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.</p>
+            </div>
+            <div class="card-body align-items-center bg-light border-top">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropTrabant">
+                Podrobnosti o vozidle
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Zigulik -->
+        <div id="4" class="col">
+          <div class="card shadow-sm">
+            <img src="images/zigulik.jpg" width="100%" height="225">
+            <div class="card-body">
+              <h3 class="fw-bold lh-1">Žigulik</h3>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque porta. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.</p>
+            </div>
+            <div class="card-body align-items-center bg-light border-top">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropZigulik">
+                Podrobnosti o vozidle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Footer -->
+  <br>
+  <br>
+  <div class="container-fluid p-2 bg-dark">
+    <footer class="my-4 align-items-center">
+      <p class="text-center text-white">Copyright © Miloš Tesař C3b, 2022</p>
+    </footer>
+  </div>
+</body>
+</html>
