@@ -17,8 +17,7 @@ class Autoservis {
 	}
 	getCarList() {
 		let output = "";
-		console.log(this.seznamAut.length());
-		if(this.seznamAut.length() != 0){
+		if(this.seznamAut.length != 0){
 			for(let i = 0; i < this.seznamAut.length; i++) {
 				output = output + this.seznamAut[i].toString()+` \n`;
 			}
@@ -41,14 +40,15 @@ myCarServis.addCarToList(new Auto(2003, "Škoda", "Octavia", 369893));
 myCarServis.addCarToList(new Auto(2000, "Škoda", "Felicia", 69097));
 myCarServis.addCarToList(new Auto(2010, "Škoda", "Superb", 129428));
 myCarServis.addCarToList(new Auto(2004, "Škoda", "Superb", 297828));
+/*
+localStorage.setItem("myServis", JSON.stringify(myCarServis.seznamAut));
 
-localStorage.setItem("myServis", myCarServis);
-
-
-myCarServis = localStorage.getItem("myServis");
-
-
-
+myCarList = JSON.parse(localStorage.getItem("myServis"));
+for(let i =0; i<myCarList; i++){
+	myCarServis.addCarToList(myCarList[i]);
+}
+console.log(myCarServis);
+*/
 function refreshCars(list) {
 	let output = ``;
 	let output2 = "";
@@ -66,8 +66,8 @@ function refreshCars(list) {
 	}
 	document.getElementById("myAutoservis").innerHTML = output;
 	document.getElementById("seznam").innerHTML = output2;
-	localStorage.removeItem("myServis");
-	localStorage.setItem("myServis", myCarServis);
+	//localStorage.removeItem("myServis");
+	//localStorage.setItem("myServis", JSON.stringify(myCarServis.seznamAut));
 }
 
 function addCar() {
@@ -79,6 +79,7 @@ function addCar() {
 	if(znacka != "" && model != "") {
 		console.log("auto je ok");
 		noveAuto = new Auto(rokVyroby, znacka, model, najeto);
+		console.log(noveAuto);
 		myCarServis.addCarToList(noveAuto);
 		refreshCars(myCarServis.seznamAut);
 		document.getElementById("znacka").value = "";
@@ -94,6 +95,18 @@ function removeCar(index) {
 	console.log(myCarServis);
 	refreshCars(myCarServis.seznamAut);
 }
-
-//console.log(myCarServis.getCarList());
+/*
+function loadFromLocal() {
+	let myServis = new Autoservis("Milošův Autoservis");
+	localStorage.setItem("myServis", JSON.stringify(myCarServis.seznamAut));
+	myCarList = JSON.parse(localStorage.getItem("myServis"));
+	for(let i =0; i<myCarList; i++){
+		myServis.addCarToList(myList[i]);
+	}
+	return myServis;
+}
+*/
+console.log(myCarServis);
+//myCarServis = loadFromLocal();
+console.log(myCarServis.getCarList());
 refreshCars(myCarServis.seznamAut);
