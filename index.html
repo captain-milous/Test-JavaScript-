@@ -60,17 +60,17 @@
 <div class="album py-1">
   <div class="container">
     <h3>Přidej vozidlo k nám do autoservisu</h3>
-    <form>
+    <form id="myForm">
       <label for="znacka">Znacka:</label><br>
       <input type="text" id="znacka" name="znacka" value=""><br>
       <label for="model">Model:</label><br>
       <input type="text" id="model" name="model" value=""><br><br>
       <label for="rVyroby">Rok vyroby:</label><br>
-      <input type="text" id="rVyroby" name="rVyroby" value=""><br><br>
+      <input type="number" min="1920" max="2023" id="rVyroby" name="rVyroby" value="2023"><br><br>
       <label for="najeto">Najeto (km):</label><br>
-      <input type="text" id="najeto" name="najeto" value=""><br><br>
+      <input type="number" min="0" max="1000000" id="najeto" name="najeto" value="0"><br><br>
 
-      <input type="submit" value="Pridej vozidlo">
+      <input type="button" onclick="addCar()" value="Pridej Vozidlo">
     </form>
   </div>
 </div>
